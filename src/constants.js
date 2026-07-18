@@ -10,6 +10,11 @@ export const DB_CONFIG = {
   }
 };
 
+// Production backend URL — deployed on Railway
+// Users can override this in the Settings modal (stored in localStorage)
+export const SERVER_BASE_URL = 'https://personal-branding-agent-production.up.railway.app';
+
+
 export const ROUTES = {
   DASHBOARD: 'dashboard',
   CLIENT_NEW: 'client/new',

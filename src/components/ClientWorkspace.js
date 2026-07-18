@@ -1042,7 +1042,7 @@ Do not include markdown wrapper, return raw json string only.`;
   async _callGeminiAPI(apiKey, systemInstruction, userContent) {
     const useBackend = localStorage.getItem('use_backend_server') === 'true';
     if (useBackend) {
-      const backendUrl = localStorage.getItem('backend_server_url') || 'http://127.0.0.1:3000';
+      const backendUrl = localStorage.getItem('backend_server_url') || 'https://personal-branding-agent-production.up.railway.app';
       try {
         const response = await fetch(`${backendUrl}/api/call-gemini`, {
           method: 'POST',
@@ -1125,7 +1125,7 @@ Do not include markdown wrapper, return raw json string only.`;
     
     const useBackend = localStorage.getItem('use_backend_server') === 'true';
     if (useBackend) {
-      const backendUrl = localStorage.getItem('backend_server_url') || 'http://127.0.0.1:3000';
+      const backendUrl = localStorage.getItem('backend_server_url') || 'https://personal-branding-agent-production.up.railway.app';
       try {
         const response = await fetch(`${backendUrl}/api/crawl`, {
           method: 'POST',

@@ -437,7 +437,7 @@ class Layout {
 
     const savedKey = localStorage.getItem('gemini_api_key') || '';
     const useBackend = localStorage.getItem('use_backend_server') === 'true';
-    const backendUrl = localStorage.getItem('backend_server_url') || 'http://127.0.0.1:3000';
+    const backendUrl = localStorage.getItem('backend_server_url') || 'https://personal-branding-agent-production.up.railway.app';
 
     const modalOverlay = document.createElement('div');
     modalOverlay.className = 'modal-overlay';
@@ -508,7 +508,7 @@ class Layout {
             </p>
             <div id="backend-url-container" style="display: ${useBackend ? 'block' : 'none'}; margin-top: 8px;">
               <label class="form-label" for="settings-backend-url" style="font-size: 0.75rem; margin-bottom: 4px;">Backend Server URL</label>
-              <input type="text" class="input-text" id="settings-backend-url" value="${backendUrl}" placeholder="e.g. http://127.0.0.1:3000" style="font-size: 0.8rem;">
+              <input type="text" class="input-text" id="settings-backend-url" value="${backendUrl}" placeholder="e.g. https://your-backend.railway.app" style="font-size: 0.8rem;">
             </div>
           </div>
 
@@ -571,7 +571,7 @@ class Layout {
     saveBtn.addEventListener('click', () => {
       const keyVal = keyInput.value.trim();
       const useBackendVal = useBackendCheckbox ? useBackendCheckbox.checked : false;
-      const backendUrlVal = document.getElementById('settings-backend-url') ? document.getElementById('settings-backend-url').value.trim() : 'http://127.0.0.1:3000';
+      const backendUrlVal = document.getElementById('settings-backend-url') ? document.getElementById('settings-backend-url').value.trim() : 'https://personal-branding-agent-production.up.railway.app';
 
       localStorage.setItem('gemini_api_key', keyVal);
       localStorage.setItem('use_backend_server', useBackendVal ? 'true' : 'false');
