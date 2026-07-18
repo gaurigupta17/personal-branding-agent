@@ -1,0 +1,200 @@
+/* ==========================================================================
+   CSS BASE & UTILITY MODULE — Scribe Studio
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap');
+
+:root {
+  /* Typography */
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-writing: 'Newsreader', 'Source Serif 4', Georgia, serif;
+
+  /* Theme: Minimalist Editorial Light */
+  --bg-app: #F8F8F6;
+  --bg-sidebar: #F3F3F1;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FAF9F6;
+  --bg-input: #FFFFFF;
+  --bg-input-focus: #FAF9F6;
+  
+  /* Borders */
+  --border-color: #E5E5E2;
+  --border-color-hover: #D3D3D0;
+  --border-focus: #3E5F49;
+
+  /* Accent Colors (Forest Green) */
+  --color-primary: #3E5F49;
+  --color-primary-hover: #2D4C37;
+  --color-primary-light: rgba(62, 95, 73, 0.08);
+  
+  --color-accent: #5C7C66;
+  --color-success: #2E7D32;
+  --color-success-light: rgba(46, 125, 50, 0.08);
+  --color-warning: #ED6C02;
+  --color-warning-light: rgba(237, 108, 2, 0.08);
+  --color-danger: #D32F2F;
+  --color-danger-light: rgba(211, 47, 47, 0.08);
+  
+  /* Text Colors */
+  --text-main: #1D1D1F;
+  --text-bright: #0F0F10;
+  --text-muted: #6B7280;
+  --text-link: #3E5F49;
+
+  /* Spacing (8px system) */
+  --space-xxs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-xxl: 3rem;     /* 48px */
+
+  /* Rounded Corners */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 14px;
+
+  /* Shadows - Minimal & Flat */
+  --shadow-sm: none;
+  --shadow-md: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-glow: none;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+}
+
+/* Dark Mode Overrides: Soft & Low Contrast */
+[data-theme="dark"] {
+  --bg-app: #121212;
+  --bg-sidebar: #1A1A1A;
+  --bg-card: #202020;
+  --bg-card-hover: #262626;
+  --bg-input: #1A1A1A;
+  --bg-input-focus: #202020;
+  
+  --border-color: #2C2C2C;
+  --border-color-hover: #383838;
+  --border-focus: #8EB69B;
+  
+  --color-primary: #8EB69B;
+  --color-primary-hover: #7CA789;
+  --color-primary-light: rgba(142, 182, 155, 0.1);
+  --color-accent: #A7CBB3;
+  --color-success: #66BB6A;
+  --color-success-light: rgba(102, 187, 106, 0.1);
+  --color-warning: #FFA726;
+  --color-warning-light: rgba(255, 167, 38, 0.1);
+  --color-danger: #EF5350;
+  --color-danger-light: rgba(239, 83, 80, 0.1);
+  
+  --text-main: #F5F5F5;
+  --text-bright: #FFFFFF;
+  --text-muted: #A1A1AA;
+  --text-link: #8EB69B;
+
+  --shadow-md: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   CSS Reset
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+/* Typography Elements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-bright);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h1 { font-size: 1.85rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.5rem; letter-spacing: -0.015em; }
+h3 { font-size: 1.2rem; letter-spacing: -0.01em; }
+h4 { font-size: 1rem; }
+h5 { font-size: 0.9rem; }
+h6 { font-size: 0.8rem; }
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--text-bright);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color-hover);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Hide Cat widget elements and styles completely to reduce visual noise */
+.cute-cat-container,
+#cute-cat-widget,
+.cat-bubble,
+.cute-cat,
+.pixel-cat-svg {
+  display: none !important;
+}
